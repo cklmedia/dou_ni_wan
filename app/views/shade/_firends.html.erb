@@ -1,0 +1,29 @@
+<div id="firends_list">
+  <div id="user_header">
+  	<div id="user_avater">
+  	  <%= link_to("#",:target => "_blank") do %>
+        <%= image_tag("avter.png",class: "img-circle")%>
+      <% end %>
+  	</div>
+  	<div id="user_intro">
+  	  <ul>
+  	  	<li><%= "柴凯龙"%></li>
+  	  	<li><%= "超级用户"%></li>
+  	  </ul>
+  	</div>
+  	<div class="clr"></div>
+  </div>
+  <div id="user_body"></div>
+  <div id="user_bottom">
+  	<div id="user_function_edit">
+  	  <%= link_to("#",:target => "_blank") do %>
+  		<span class="glyphicon glyphicon-cog"></span>
+  	  <% end %>
+  	</div>
+  	<div id="user_function_add">
+  	  <%= link_to("#",:target => "_blank") do %>
+  		<span class="glyphicon glyphicon-plus"></span>
+  	  <% end %>
+  	</div>
+  </div>
+</div>

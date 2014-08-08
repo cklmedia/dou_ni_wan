@@ -1,0 +1,35 @@
+*{margin: 0;padding: 0;}
+body{background-image: url(bac.png);}
+#page_header{background: #996633;height: 60px;}
+.content{width: 95%;min-width: 1008px;margin: auto;overflow: hidden;}
+.clr{clear:both;}
+li{list-style-type: none;}
+/*header*/
+#logo_image{display:block;background-repeat: no-repeat;float: left;margin-top: 8px;}
+#logo_ul{float: right;font-size: 20px}
+#logo_ul ul{overflow: hidden;}
+#logo_ul li{list-style-type: none; float: left;}
+#logo_ul a{display: block;padding: 0 16px;text-decoration: none;color: wheat;margin-top: 20px;}
+#logo_ul li+li a {border-left: 1px solid #aaa;}
+
+/*bottom*/
+#page_bottom{margin: 5px;}
+#page_bottom p{border-top: 2px solid #aaa;width: 100%;margin: auto;text-align: center;padding: 10px 0 0 0;color: #666666; }
+
+
+/*content*/
+#container{width: 100%;margin: auto;}
+#firends_list{width: 18%;min-width:150px;background-color: white;height: 500px;border-radius: 10px;position: fixed;top: 170px;left: 10px;}
+#msg_content{width: 60%;margin: auto;background-color: white;border-radius: 10px;height: 700px;margin-top: 15px;}
+
+/*firend*/
+#user_header{width: 100%;background-color: #ECE9E9;min-height: 80px;border-radius: 10px 10px 0px 0px;height: 10%}
+#user_avater{width: 30%;float: left;}
+#user_intro{width:60%;float: right;margin: 0;}
+#user_intro ul{margin-top: 20px;}
+#user_avater img{width: 50px;height: 50px;margin: 15px 10px 0px 15px;}
+#user_body{height: 80%}
+#user_bottom{width: 100%;background-color: #ECE9E9;min-height: 40px;border-radius: 0px 0px 10px 10px;height: 10%}
+#user_function_edit{width: 20%;float: left;}
+#user_function_add{width: 20%;float: right;}
+#user_bottom span{margin: 15px;}
