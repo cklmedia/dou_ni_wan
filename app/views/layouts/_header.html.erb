@@ -5,7 +5,13 @@
   	</div>
   	<div id="logo_ul">
 	  <ul>
-	  	<li><a href="#">柴凯龙</a></li>
+      <% if logined? %>
+        <li><%= link_to current_user.name,user_path(current_user)%></li>
+        <li><%= link_to "退出",session_path(current_user),method: "delete",data:{ confirm: '确认退出吗?' } %></li>
+      <% else %>
+        <li><%= link_to "登录",new_session_path %></li>
+        <li><%= link_to "注册",new_user_path %></li>
+      <% end %>
 	  	<li><a href="#">关于</a></li>
 	  </ul>
   	</div>

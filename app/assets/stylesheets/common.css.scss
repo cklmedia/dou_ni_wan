@@ -14,7 +14,7 @@ li{list-style-type: none;}
 
 /*bottom*/
 #page_bottom{margin: 5px;}
-#page_bottom p{border-top: 2px solid #aaa;width: 100%;margin: auto;text-align: center;padding: 10px 0 0 0;color: #666666; }
+#page_bottom p{width: 100%;margin: auto;text-align: center;padding: 10px 0 0 0;color: #666666; }
 
 
 /*content*/
@@ -33,3 +33,9 @@ li{list-style-type: none;}
 #user_function_edit{width: 20%;float: left;}
 #user_function_add{width: 20%;float: right;}
 #user_bottom span{margin: 15px;}
+#user_identy a{font-size: 12px;}
+.group_list {width: 85%;margin: auto;}
+.group_list h5 span{float: right;margin-top: 5px;}
+img.firend_avatar{width:20px;height: 20px;border: 1px solid #aaa;}
+.firend_name_list {margin: 0px 0px 3px 8px;}
+.firend_name_list a{color: rgb(29, 85, 26);padding: 0 !important;}

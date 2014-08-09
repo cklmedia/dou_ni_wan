@@ -16,6 +16,10 @@ gem 'jquery-rails'
 
 gem 'turbolinks'
 
+#uplood picture
+gem 'carrierwave'
+gem 'mini_magick'
+
 gem 'jbuilder', '~> 1.2'
 
 group :doc do
