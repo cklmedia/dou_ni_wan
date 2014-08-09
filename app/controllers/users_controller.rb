@@ -18,6 +18,26 @@ class UsersController < ApplicationController
   	end
   end
 
+  def add_group
+    group = Group.new(name:params[:name],user_id:current_user.id)
+    if group.save
+      flash[:success] = "添加逗群成功！"
+      redirect_to :back
+    else
+      flash[:danger] = "添加都群失败！"
+      redirect_to :back
+    end
+  end
+
+  def add_friend
+    
+  end
+
+  def key_email
+    user = User.find_by_email(params[:email])
+    render :json => user.to_json
+  end
+
   private
     def get_user_params
       params.require(:user).permit(:name, :email, :password,:password_confirmation,:avatar)

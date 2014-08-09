@@ -1,1 +1,6 @@
-User.create(email:"876137144@qq.com",password:"123456", password_confirmation: "123456",name:"admin",level:0)
+max=User.create(email:"876137144@qq.com",password:"123456", password_confirmation: "123456",name:"max_admin",level:0)
+mid=User.create(email:"111111@qq.com",password:"123456", password_confirmation: "123456",name:"mid_admin",level:1)
+min=User.create(email:"222222@qq.com",password:"123456", password_confirmation: "123456",name:"min_admin",level:2)
+work=Group.create(name:"东边一枝花",user:max)
+Firend.create(group:work,own:max,user:mid)
+Firend.create(group:work,own:max,user:min)

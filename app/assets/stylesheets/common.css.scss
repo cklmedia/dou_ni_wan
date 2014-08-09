@@ -29,13 +29,14 @@ li{list-style-type: none;}
 #user_intro ul{margin-top: 20px;}
 #user_avater img{width: 50px;height: 50px;margin: 15px 10px 0px 15px;}
 #user_body{height: 80%}
+.sidebar{height: 96%;overflow:auto;}
 #user_bottom{width: 100%;background-color: #ECE9E9;min-height: 40px;border-radius: 0px 0px 10px 10px;height: 10%}
 #user_function_edit{width: 20%;float: left;}
 #user_function_add{width: 20%;float: right;}
-#user_bottom span{margin: 15px;}
 #user_identy a{font-size: 12px;}
 .group_list {width: 85%;margin: auto;}
 .group_list h5 span{float: right;margin-top: 5px;}
 img.firend_avatar{width:20px;height: 20px;border: 1px solid #aaa;}
 .firend_name_list {margin: 0px 0px 3px 8px;}
 .firend_name_list a{color: rgb(29, 85, 26);padding: 0 !important;}
+.user_function_button{border: 0;background: transparent;color: rgb(47, 95, 128);width: 20px;height: 20px;margin: 15px;}

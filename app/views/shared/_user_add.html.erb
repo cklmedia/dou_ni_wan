@@ -1,0 +1,47 @@
+<div class="modal fade request_modal" id="user_add_modal" tabindex="-1" role="dialog" aria-labelledby="contactLabel" aria-hidden="false" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <button type="button" class="close user_add_modal_close">×</button>
+        <h4 class="panel-title" id="contactLabel">逗＋逗</h4>
+      </div>
+
+      <div class="modal-body">
+
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="active"><a href="#add_group" role="tab" data-toggle="tab">＋逗群</a></li>
+          <li><a href="#add_user" role="tab" data-toggle="tab">＋逗友</a></li>
+        </ul>
+        
+        <div class="tab-content" style="margin: 10px; min-height: 150px;">
+
+          <div class="tab-pane fade active in" id="add_group">
+            <%= form_tag(add_group_users_path,method:'post') do %>
+              <div class="form-group">
+                <%= label_tag '逗群名' %>
+                <%= text_field_tag 'name',nil,:class => "form-control"%>
+              </div>
+              <div class="form-group">
+                <%= submit_tag '添加', class: "btn btn-large btn-success" %>
+              </div>
+            <% end %>
+          </div>
+
+          <div class="tab-pane fade" id="add_user">
+            <div class="form-group">
+              <%= label_tag '逗友邮箱' %>
+              <%= text_field_tag 'email',nil,:class => "form-control user_add_firend",placeholder:"邮箱，一定要正确哦！"%>
+            </div>
+            <div class="form-group">
+              <%= label_tag '查询结果' %>
+              <div class="key_result">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

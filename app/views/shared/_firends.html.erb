@@ -29,17 +29,36 @@
 
         <li class="group_list">
           <h5>所有逗友<span class="caret"></span></h5>
-          <ul class="nav active">
-
-            <li class="firend_name_list">
-              <%= link_to("#") do %>
-                <%= image_tag("default_avatar.jpg",class: "img-rounded firend_avatar")%>
-                美女
-              <% end %>
-            </li>
-            
+          <ul class="nav">
+            <% Firend.select_own(current_user.id).each do |i| %>
+              <li class="firend_name_list">
+                <%= link_to("#") do %>
+                  <%= image_tag("default_avatar.jpg",class: "img-rounded firend_avatar") if !i.user.avatar?%>
+                  <%= image_tag(i.user.avatar_url(:min_avatar),class: "img-rounded firend_avatar") if i.user.avatar?%>
+                  <%= i.user.name %>
+                <% end %>
+              </li>
+            <% end %>
           </ul>
         </li>
+
+        <% Group.select_own(current_user.id).each do |r|%>
+          <li class="group_list">
+            <h5><%=r.name %><span class="caret"></span></h5>
+            <ul class="nav">
+            <% Firend.select_own_group(current_user.id,r.id).each do |i| %>
+              <li class="firend_name_list">
+                <%= link_to("#") do %>
+                  <%= image_tag("default_avatar.jpg",class: "img-rounded firend_avatar") if !i.user.avatar?%>
+                  <%= image_tag(i.user.avatar_url(:min_avatar),class: "img-rounded firend_avatar") if i.user.avatar?%>
+                  <%= i.user.name %>
+                <% end %>
+              </li>
+            <% end %>
+            </ul>
+          </li>
+        <% end %>
+
 
       </ul>
     </div>
@@ -47,14 +66,16 @@
 
   <div id="user_bottom">
   	<div id="user_function_edit">
-  	  <%= link_to("#",:target => "_blank") do %>
-  		<span class="glyphicon glyphicon-cog"></span>
-  	  <% end %>
+  	  <button type="button" class="user_function_button">
+        <span class="glyphicon glyphicon-cog"></span>
+      </button>
   	</div>
   	<div id="user_function_add">
-  	  <%= link_to("#",:target => "_blank") do %>
-  		<span class="glyphicon glyphicon-plus"></span>
-  	  <% end %>
+  	  <button type="button" class="user_function_button" id="user_add_button">
+        <span class="glyphicon glyphicon-plus"></span>
+      </button>
   	</div>
   </div>
 </div>
+
+<%= render 'shared/user_add'%>
