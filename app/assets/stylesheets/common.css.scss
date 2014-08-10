@@ -19,7 +19,7 @@ li{list-style-type: none;}
 
 /*content*/
 #container{width: 100%;margin: auto;}
-#firends_list{width: 18%;min-width:150px;background-color: white;height: 500px;border-radius: 10px;position: fixed;top: 170px;left: 10px;}
+#firends_list{width: 18%;min-width:150px;background-color: white;height: 70%;border-radius: 10px;position: fixed;top: 120px;left: 10px;}
 #msg_content{width: 60%;margin: auto;background-color: white;border-radius: 10px;height: 700px;margin-top: 15px;}
 
 /*firend*/
@@ -40,3 +40,4 @@ img.firend_avatar{width:20px;height: 20px;border: 1px solid #aaa;}
 .firend_name_list {margin: 0px 0px 3px 8px;}
 .firend_name_list a{color: rgb(29, 85, 26);padding: 0 !important;}
 .user_function_button{border: 0;background: transparent;color: rgb(47, 95, 128);width: 20px;height: 20px;margin: 15px;}
+.key_result_itme{width: 33%;float: left;}

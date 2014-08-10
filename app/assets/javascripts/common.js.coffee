@@ -20,8 +20,13 @@ $(document).ready ->
 
 $(document).ready ->
   $(".user_add_firend").change ->
-    key = $(this).val()
+    key = $(this).val().replace(".","~")
+    $(".key_result_name").html("")
+    $(".key_result_avatar").html("")
+    $(".key_result_link").html("")
     $.get "/users/key_email/" + key, (data) ->
-      if data != null
-        $(".key_result").html("<img src='"+data.avatar.url+"' class='img-rounded firend_avatar'/>") if data.avatar.url
-        $(".key_result").after("<p>"+data.name"</p>")
+      if data
+        $(".key_result_avatar").html("<img src='"+data.avatar.url+"' class='img-rounded firend_avatar'/>") if data.avatar.url
+        $(".key_result_avatar").html("<img src='/assets/default_avatar.jpg' class='img-rounded firend_avatar'/>") if !data.avatar.url
+        $(".key_result_name").html("<p>"+data.name+"</p>")
+        $(".key_result_link").html("<a href='/users/add_friend/"+data.id+"' class='btn btn-xs btn-success'>+添加为逗友</a>")

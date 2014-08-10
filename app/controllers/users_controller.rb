@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    @user=current_user
   end
 
   def new
@@ -24,18 +25,31 @@ class UsersController < ApplicationController
       flash[:success] = "添加逗群成功！"
       redirect_to :back
     else
-      flash[:danger] = "添加都群失败！"
+      flash[:danger] = "添加逗群失败！"
       redirect_to :back
     end
   end
 
   def add_friend
-    
+    firend = Firend.new(user_id:params[:id],own_id:current_user.id)
+    if firend.save
+      flash[:success] = "添加逗友成功！"
+      render 'index'
+    else
+      flash[:danger] = "添加逗友失败！"
+      render 'index'
+    end
   end
 
   def key_email
-    user = User.find_by_email(params[:email])
-    render :json => user.to_json
+    key=params[:email].gsub("~",".")
+    user = User.find_by_email(key)
+    # logger.info "--------#{current_user.id}-------------#{user.id}------------------------"
+    if Firend.exist_one(user.id,current_user.id).blank?
+      render :json => user.to_json
+    else
+      render :json => "".to_json
+    end
   end
 
   private

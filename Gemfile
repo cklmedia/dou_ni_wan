@@ -16,6 +16,9 @@ gem 'jquery-rails'
 
 gem 'turbolinks'
 
+# jason interprter
+gem 'jbuilder', '~> 1.2'
+
 #uplood picture
 gem 'carrierwave'
 gem 'mini_magick'
